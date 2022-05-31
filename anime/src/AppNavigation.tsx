@@ -8,10 +8,10 @@ import {Tabbar} from './TabBar/Tabbar';
 export const AppNavigation = () => {
   return (
     <NavigationContainer>
-      {/* <BottomTabNavigation /> */}
-      <View style={styles.container}>
+      <BottomTabNavigation />
+      {/* <View style={styles.container}>
         <Tabbar />
-      </View>
+      </View> */}
     </NavigationContainer>
   );
 };

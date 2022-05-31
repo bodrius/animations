@@ -8,9 +8,9 @@ export const Post = () => {
         flex: 1,
         justifyContent: 'center',
         alignItems: 'center',
-        backgroundColor: 'green',
+        backgroundColor: '#242424',
       }}>
-      <Text>POST</Text>
+      <Text style={{fontSize: 30, color: 'white'}}>POST</Text>
     </View>
   );
 };

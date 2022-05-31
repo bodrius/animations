@@ -8,9 +8,9 @@ export const Main = () => {
         flex: 1,
         justifyContent: 'center',
         alignItems: 'center',
-        backgroundColor: 'red',
+        backgroundColor: '#242424',
       }}>
-      <Text> MAIN</Text>
+      <Text style={{fontSize: 30, color: 'white'}}> MAIN</Text>
     </View>
   );
 };

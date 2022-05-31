@@ -8,30 +8,13 @@ import {
 import React from 'react';
 import * as shape from 'd3-shape';
 import Svg, {Path} from 'react-native-svg';
-import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
-
 import {StaticTabbar} from './StaticTabbar';
 
-const Tab = createBottomTabNavigator();
-
-const AnimatedSvg = Animated.createAnimatedComponent(Svg);
-const {width} = Dimensions.get('window');
 const height = 50;
-
-const tabs = [
-  {
-    name: 'home-outline',
-  },
-  {
-    name: 'add-circle-outline',
-  },
-  {
-    name: 'chatbubble-ellipses-outline',
-  },
-];
-
-const tabWidth = width / tabs.length;
+const {width} = Dimensions.get('window');
+const tabWidth = width / 3;
 const backgroundColor = '#363636';
+const AnimatedSvg = Animated.createAnimatedComponent(Svg);
 
 const getPath = (): string => {
   const left = shape
@@ -72,7 +55,7 @@ const getPath = (): string => {
 };
 const d = getPath();
 
-export const Tabbar = () => {
+export const Tabbar = ({state, descriptors, navigation}) => {
   const value = new Animated.Value(0);
 
   const translateX = value.interpolate({
@@ -82,7 +65,7 @@ export const Tabbar = () => {
 
   return (
     <>
-      <View {...{height, width}}>
+      <View style={{backgroundColor: '#242424'}} {...{height, width}}>
         <AnimatedSvg
           width={width * 2}
           {...{height}}
@@ -90,7 +73,7 @@ export const Tabbar = () => {
           <Path fill={backgroundColor} {...{d}} />
         </AnimatedSvg>
         <View style={StyleSheet.absoluteFill}>
-          <StaticTabbar {...{tabs, value}} />
+          <StaticTabbar {...{value, state, descriptors, navigation}} />
         </View>
       </View>
       <SafeAreaView style={styles.container} />

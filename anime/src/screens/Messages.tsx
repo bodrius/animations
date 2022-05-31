@@ -8,9 +8,9 @@ export const Messages = () => {
         flex: 1,
         justifyContent: 'center',
         alignItems: 'center',
-        backgroundColor: 'yellow',
+        backgroundColor: '#242424',
       }}>
-      <Text>MESSAGES</Text>
+      <Text style={{fontSize: 30, color: 'white'}}>MESSAGES</Text>
     </View>
   );
 };
